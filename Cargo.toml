@@ -1,0 +1,31 @@
+
+[package]
+name = "nexcore-orchestration"
+version = "1.0.0"
+edition = "2024"
+authors = ["NexVigilant Team <team@nexvigilant.com>"]
+license = "LicenseRef-Proprietary"
+description = "Multi-agent lifecycle, registry, consensus, work queue, and status server for NexVigilant Core"
+
+[dependencies]
+nexcore-error = { workspace = true }
+nexcore-vigilance = { version = "1.0.0", path = "../nexcore-vigilance", registry = "nexcore" }
+nexcore-lex-primitiva = { version = "0.1.0", path = "../nexcore-lex-primitiva", registry = "nexcore" }
+tokio = { version = "1.38.0", features = ["full"] }
+axum = { version = "0.8.0", features = ["macros"] }
+dashmap = { version = "6.0.1" }
+serde = { version = "1.0.204", features = ["derive"] }
+serde_json = { version = "1.0.120" }
+nexcore-chrono = { workspace = true }
+nexcore-id = { version = "0.1.0", path = "../nexcore-id", registry = "nexcore", features = ["serde"] }
+sha2 = { version = "0.10.8" }
+nexcore-codec = { version = "0.1.0", path = "../nexcore-codec", registry = "nexcore" }
+tracing = { version = "0.1.40" }
+async-trait = "0.1"
+
+[dev-dependencies]
+tokio = { version = "1.38.0", features = ["full"] }
+tempfile = { version = "3.10.1" }
+
+[lints]
+workspace = true
